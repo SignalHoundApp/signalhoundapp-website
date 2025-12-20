@@ -137,37 +137,51 @@
         }
 
         .use-cases {
-            background: #0979ff;
-            color: white;
+            background: white;
             padding: 40px;
             border-radius: 15px;
             margin-top: 30px;
         }
 
         .use-cases h3 {
-            color: white;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            color: #0561c7;
+            border-bottom: 2px solid #0561c7;
             padding-bottom: 10px;
         }
 
         .use-cases-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
         }
 
         .use-case-item {
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .use-case-item::before {
-            content: "✓ ";
-            font-weight: bold;
-            margin-right: 5px;
+        .use-case-item:hover {
+            border-color: #0979ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(9, 121, 255, 0.15);
+        }
+
+        .use-case-icon {
+            font-size: 1.8em;
+            color: #0561c7;
+            flex-shrink: 0;
+        }
+
+        .use-case-text {
+            color: #333;
+            font-weight: 500;
         }
 
         .tech-specs {
@@ -344,15 +358,42 @@
             <div class="use-cases">
                 <h3>Perfect for Finding</h3>
                 <div class="use-cases-list">
-                    <div class="use-case-item">AirPods & wireless earbuds</div>
-                    <div class="use-case-item">Fitness trackers</div>
-                    <div class="use-case-item">Smart watches</div>
-                    <div class="use-case-item">Bluetooth headphones</div>
-                    <div class="use-case-item">Smart home devices</div>
-                    <div class="use-case-item">Car OBD-II adapters</div>
-                    <div class="use-case-item">Medical devices</div>
-                    <div class="use-case-item">Pet trackers</div>
-                    <div class="use-case-item">Any BLE device</div>
+                    <div class="use-case-item">
+                        <div class="use-case-icon">♫</div>
+                        <div class="use-case-text">AirPods & wireless earbuds</div>
+                    </div>
+                    <div class="use-case-item">
+                        <div class="use-case-icon">⌚</div>
+                        <div class="use-case-text">Fitness trackers</div>
+                    </div>
+                    <div class="use-case-item">
+                        <div class="use-case-icon">◷</div>
+                        <div class="use-case-text">Smart watches</div>
+                    </div>
+                    <div class="use-case-item">
+                        <div class="use-case-icon">♪</div>
+                        <div class="use-case-text">Bluetooth headphones</div>
+                    </div>
+                    <div class="use-case-item">
+                        <div class="use-case-icon">◉</div>
+                        <div class="use-case-text">Smart home devices</div>
+                    </div>
+                    <div class="use-case-item">
+                        <div class="use-case-icon">⊙</div>
+                        <div class="use-case-text">Car OBD-II adapters</div>
+                    </div>
+                    <div class="use-case-item">
+                        <div class="use-case-icon">⊕</div>
+                        <div class="use-case-text">Medical devices</div>
+                    </div>
+                    <div class="use-case-item">
+                        <div class="use-case-icon">◐</div>
+                        <div class="use-case-text">Pet trackers</div>
+                    </div>
+                    <div class="use-case-item">
+                        <div class="use-case-icon">◎</div>
+                        <div class="use-case-text">Any BLE device</div>
+                    </div>
                 </div>
             </div>
         </div>
