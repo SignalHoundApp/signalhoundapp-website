@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SignalHound - Never lose your Bluetooth devices again. Find lost AirPods, fitness trackers, and any BLE device with our innovative radar interface.">
+    <meta name="keywords" content="bluetooth finder, BLE tracker, find AirPods, lost device finder, bluetooth locator">
+    <title>SignalHound - Find Your Lost Bluetooth Devices</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        .logo {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .app-store-badge {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-store-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .feature-description {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .use-cases {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .use-cases h3 {
+            color: white;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .use-cases-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .use-case-item {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .use-case-item::before {
+            content: "✓ ";
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .tech-specs {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            margin-top: 30px;
+        }
+
+        .tech-specs ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .tech-specs li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .tech-specs li:last-child {
+            border-bottom: none;
+        }
+
+        .tech-specs li strong {
+            color: #667eea;
+            display: inline-block;
+            min-width: 180px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+
+        footer a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .privacy-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .tagline {
+                font-size: 1.1em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">📡</div>
+            <h1>SignalHound</h1>
+            <p class="tagline">Never lose your Bluetooth devices again</p>
+            <a href="#" class="app-store-badge">Download on the App Store</a>
+        </header>
+
+        <div class="content-section">
+            <h2>Find Lost Devices with Precision</h2>
+            <p style="font-size: 1.2em; color: #555; margin-bottom: 20px;">
+                SignalHound helps you locate lost BLE (Bluetooth Low Energy) devices using an innovative
+                radar interface with real-time signal strength feedback. Whether you've misplaced your
+                AirPods, fitness tracker, or smart watch, SignalHound makes finding them simple and intuitive.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-title">Real-Time Radar</div>
+                    <div class="feature-description">
+                        Visual search with animated radar sweep shows you exactly where to look for your device
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔊</div>
+                    <div class="feature-title">Audio Feedback</div>
+                    <div class="feature-description">
+                        Beeping intensifies as you approach your device, guiding you step by step
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-title">Signal Strength</div>
+                    <div class="feature-description">
+                        Live RSSI monitoring shows precise distance and helps you track your device
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">☁️</div>
+                    <div class="feature-title">iCloud Sync</div>
+                    <div class="feature-description">
+                        Access your saved devices across all your iPhones with seamless synchronization
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <div class="feature-title">Haptic Feedback</div>
+                    <div class="feature-description">
+                        Feel your way to your device with optional vibration feedback
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <div class="feature-title">Deep Discovery</div>
+                    <div class="feature-description">
+                        View detailed Bluetooth service information and device characteristics
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>How It Works</h2>
+            <h3>1. Discover & Save</h3>
+            <p>Scan for nearby Bluetooth devices and save them with custom names for easy identification.</p>
+
+            <h3>2. Launch Radar Search</h3>
+            <p>When you lose a device, select it from your saved list and start the radar search mode.</p>
+
+            <h3>3. Follow the Signal</h3>
+            <p>Move around while watching the radar and listening to audio beeps. As you get closer to your device,
+            the beeps speed up and the signal strength increases.</p>
+
+            <h3>4. Find Your Device</h3>
+            <p>When the signal is strongest, you've found your device! The app will show you're right on top of it.</p>
+        </div>
+
+        <div class="content-section">
+            <div class="use-cases">
+                <h3>Perfect for Finding</h3>
+                <div class="use-cases-list">
+                    <div class="use-case-item">AirPods & wireless earbuds</div>
+                    <div class="use-case-item">Fitness trackers</div>
+                    <div class="use-case-item">Smart watches</div>
+                    <div class="use-case-item">Bluetooth headphones</div>
+                    <div class="use-case-item">Smart home devices</div>
+                    <div class="use-case-item">Car OBD-II adapters</div>
+                    <div class="use-case-item">Medical devices</div>
+                    <div class="use-case-item">Pet trackers</div>
+                    <div class="use-case-item">Any BLE device</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Privacy First</h2>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">
+                Your privacy is our top priority. SignalHound is built with privacy as a core principle:
+            </p>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="padding: 10px 0; border-bottom: 1px solid #e0e0e0;">
+                    ✓ All data stored in your private iCloud
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #e0e0e0;">
+                    ✓ No tracking or analytics
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #e0e0e0;">
+                    ✓ No third-party services
+                </li>
+                <li style="padding: 10px 0;">
+                    ✓ Your device list stays completely private
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <div class="tech-specs">
+                <h3 style="color: #667eea; margin-top: 0;">Technical Specifications</h3>
+                <ul>
+                    <li><strong>Platform:</strong> iPhone running iOS 17.0 or later</li>
+                    <li><strong>Compatibility:</strong> All BLE (Bluetooth 4.0+) devices</li>
+                    <li><strong>Range:</strong> Up to 30+ meters (100 feet) depending on device</li>
+                    <li><strong>Technology:</strong> Real-time RSSI monitoring</li>
+                    <li><strong>Sync:</strong> iCloud/CloudKit integration</li>
+                    <li><strong>Database:</strong> 3,938 Bluetooth manufacturer IDs</li>
+                    <li><strong>Services:</strong> 811 GATT service identifiers</li>
+                    <li><strong>Privacy:</strong> No data collection, local-first storage</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section" style="text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <h2 style="color: white; border-bottom: 2px solid rgba(255, 255, 255, 0.3);">Ready to Find Your Devices?</h2>
+            <p style="font-size: 1.2em; margin: 30px 0;">
+                Download SignalHound today and never lose a Bluetooth device again.
+            </p>
+            <a href="#" class="app-store-badge" style="background: white; color: #667eea;">
+                Download on the App Store
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 SignalHound. All rights reserved.</p>
+        <nav style="margin-top: 15px;">
+            <a href="privacy-policy.html" class="privacy-link">Privacy Policy</a>
+        </nav>
+        <p style="margin-top: 20px; opacity: 0.8; font-size: 0.9em;">
+            Made with ❤️ for people who lose things
+        </p>
+    </footer>
+</body>
+</html>
