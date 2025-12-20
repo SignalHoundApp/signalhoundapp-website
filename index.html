@@ -34,8 +34,13 @@
         }
 
         .logo {
-            font-size: 3em;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 120px;
+            height: 120px;
+            filter: brightness(0) invert(1);
         }
 
         h1 {
@@ -242,7 +247,9 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo">◉</div>
+            <div class="logo">
+                <img src="logo.svg" alt="SignalHound Logo">
+            </div>
             <h1>SignalHound</h1>
             <p class="tagline">Never lose your Bluetooth devices again</p>
             <a href="#" class="app-store-badge">Download on the App Store</a>
